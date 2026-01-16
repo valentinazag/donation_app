@@ -1,0 +1,17 @@
+.organizationList li {
+  background-color: rgb(221, 148, 255);
+  max-width: 20%;
+  list-style: none;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
+  padding: 0;
+  gap: 20px;
+  margin: 0;
+}
+
+.organizationLink li a {
+  list-style-type: none;
+  text-decoration: none;
+}
