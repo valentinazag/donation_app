@@ -51,12 +51,14 @@ function ProjectList({
   return (
     <Link
       to={`/organization/${organizationId}/project/${project.id}`}
-      className="projectsLink"
+      className="organizationProjectsLinks"
     >
-      <ul className="projectLink">
-        <li className="projectName">{project.name}</li>
-        <li className="projectDescription">{project.description}</li>
-      </ul>
+      <div className="organizationProject-link">
+        <div className="organizationProject-name">{project.name}</div>
+        <div className="organizationProject-description">
+          {project.description}
+        </div>
+      </div>
     </Link>
   );
 }
@@ -72,9 +74,9 @@ function OrganizationCard({
     (project) => project.organizationId === organization.id,
   );
   return (
-    <div className="organization-card">
-      <div className="organization-name">{organization.name}</div>
-      <div className="organization-projects">
+    <div className="organizationPage-card">
+      <div className="organizationPage-name">{organization.name}</div>
+      <div className="organizationPage-projects">
         {organizationProjects.map((project) => (
           <ProjectList
             key={project.id}
@@ -90,10 +92,12 @@ function OrganizationCard({
 export default function OrganizationPage({ loaderData }: Route.ComponentProps) {
   const { organization, projects } = loaderData;
   return (
-    <OrganizationCard
-      key={organization.id}
-      organization={organization}
-      projects={projects}
-    />
+    <div className="organization-page">
+      <OrganizationCard
+        key={organization.id}
+        organization={organization}
+        projects={projects}
+      />
+    </div>
   );
 }

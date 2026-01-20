@@ -27,13 +27,27 @@ export async function loader({ params, request }: Route.LoaderArgs) {
 export default function ProjectPage({ loaderData }: Route.ComponentProps) {
   const { project } = loaderData;
   return (
-    <body>
+    <div className="project-page">
       <section>
-        <div className="project-container">
-          <div className="project-name">{project.name}</div>
-          <div className="project-description">{project.description}</div>
+        <div className="projectPage-card">
+          <div className="projectPage-name">{project.name}</div>
+          <div className="projectPage-description">{project.description}</div>
+          <div className="buttons-donation">
+            <button type="submit" className="button first-button">
+              $1000
+            </button>
+            <button type="submit" className="button second-button">
+              $3000
+            </button>
+            <button type="submit" className="button third-button">
+              $5000
+            </button>
+            <button type="submit" className="button fourth-button">
+              $10000
+            </button>
+          </div>
         </div>
       </section>
-    </body>
+    </div>
   );
 }

@@ -24,10 +24,12 @@ function OrganizationList({
 }) {
   return (
     <Link to={`/organization/${organization.id}`} className="organizationLink">
-      <ul className="organizationList">
-        <li className="organizationName">{organization.name}</li>
-        <li className="organizationDescription">{organization.description}</li>
-      </ul>
+      <div className="organization">
+        <div className="organizationName">{organization.name}</div>
+        <div className="organizationDescription">
+          {organization.description}
+        </div>
+      </div>
     </Link>
   );
 }
@@ -35,9 +37,9 @@ function OrganizationList({
 export default function Home({ loaderData }: Route.ComponentProps) {
   const { organizations } = loaderData;
   return (
-    <body>
+    <div>
       <section>
-        <div className="title">Donation app</div>
+        <div className="title">DONATION APP</div>
       </section>
       <section>
         <div className="organizations_container">
@@ -49,6 +51,6 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           ))}
         </div>
       </section>
-    </body>
+    </div>
   );
 }
