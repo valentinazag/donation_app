@@ -24,6 +24,14 @@ export async function loader({ params, request }: Route.LoaderArgs) {
   return { project };
 }
 
+function DonationButton({ value, style }: { value: number; style: string }) {
+  return (
+    <button type="submit" value={value} className={style}>
+      {`$${value}`}
+    </button>
+  );
+}
+
 export default function ProjectPage({ loaderData }: Route.ComponentProps) {
   const { project } = loaderData;
   return (
@@ -33,18 +41,10 @@ export default function ProjectPage({ loaderData }: Route.ComponentProps) {
           <div className="projectPage-name">{project.name}</div>
           <div className="projectPage-description">{project.description}</div>
           <div className="buttons-donation">
-            <button type="submit" className="button first-button">
-              $1000
-            </button>
-            <button type="submit" className="button second-button">
-              $3000
-            </button>
-            <button type="submit" className="button third-button">
-              $5000
-            </button>
-            <button type="submit" className="button fourth-button">
-              $10000
-            </button>
+            <DonationButton value={1000} style="button first-button" />
+            <DonationButton value={3000} style="button second-button" />
+            <DonationButton value={5000} style="button third-button" />
+            <DonationButton value={10000} style="button fourth-button" />
           </div>
         </div>
       </section>

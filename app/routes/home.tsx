@@ -42,7 +42,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <div className="title">DONATION APP</div>
       </section>
       <section>
-        <div className="organizations_container">
+        <div className="organizations-container">
           {organizations.map((organization) => (
             <OrganizationList
               key={organization.id}
